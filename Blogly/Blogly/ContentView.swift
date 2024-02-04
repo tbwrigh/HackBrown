@@ -45,6 +45,15 @@ struct ContentView: View {
                             .foregroundColor(.white)
                     }
                 }
+                NavigationLink(destination: Search()
+                    .onAppear {canEdit = false}) {
+                    HStack {
+                        Text("Search")
+
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.white)
+                    }
+                }
                 Section(header: Text("Subscribed")) {
                     ForEach(feeds) { feed in
                         NavigationLink(destination: Blog(rssFeedURL: feed.url).onAppear {
