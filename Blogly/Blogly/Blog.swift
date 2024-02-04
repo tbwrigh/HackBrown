@@ -16,23 +16,29 @@ struct Blog: View {
     @State private var isLoading = false
     
     var body: some View {
-        
-        if feedItems.count == 0 {
-            Text("Loading...")
+        GeometryReader { geometry in
+            NavigationView {
+                List(feedItems, id: \.title) { item in
+                    NavigationLink(destination: WebViewWithToolbar(url: URL(string: item.link ?? "")!)) {
+                        VStack(alignment: .leading) {
+                            Text(item.title ?? "Untitled").fontWeight(.bold)
+                                .frame(minWidth: geometry.size.width*0.95, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                            Text(item.description ?? "No description")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                                .frame(minWidth: geometry.size.width*0.95, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+
+                        }
+                    }
+                    
+                }
+                .onAppear {
+                    loadRSSFeed()
+                }
+                .frame(minWidth: geometry.size.width, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            }
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
         }
-        
-        List(feedItems, id: \.title) {
-            item in
-            VStack(alignment: .leading) {
-                Text(item.title ?? "Untitled").fontWeight(.bold)
-                Text(item.description ?? "No description")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-             }
-         }
-         .onAppear {
-             loadRSSFeed()
-         }
     }
     
     func loadRSSFeed() {
@@ -44,7 +50,7 @@ struct Blog: View {
     }
     
     func parseRSSFeed(rssURL: String) async {
-        var data = fetchData(from: rssURL)!
+        let data = fetchData(from: rssURL)!
         let parser = FeedParser(data: data)
         let result = parser.parse()
         switch result {

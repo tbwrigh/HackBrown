@@ -11,8 +11,10 @@ import SwiftData
 @Model
 final class RSSFeed {
     var url: String
+    var name: String
     
-    init(url: String) {
+    init(name: String, url: String) {
+        self.name = name
         self.url = url
     }
 }
