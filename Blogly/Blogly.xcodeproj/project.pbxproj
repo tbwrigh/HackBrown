@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD588A162B6EE8670043D19E /* BloglyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD588A152B6EE8670043D19E /* BloglyApp.swift */; };
+		AD588A182B6EE8670043D19E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD588A172B6EE8670043D19E /* ContentView.swift */; };
+		AD588A1A2B6EE8670043D19E /* RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD588A192B6EE8670043D19E /* RSSFeed.swift */; };
+		AD588A1C2B6EE8680043D19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD588A1B2B6EE8680043D19E /* Assets.xcassets */; };
+		AD588A1F2B6EE8680043D19E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD588A1E2B6EE8680043D19E /* Preview Assets.xcassets */; };
+		AD588A2A2B6EE8680043D19E /* BloglyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD588A292B6EE8680043D19E /* BloglyTests.swift */; };
+		AD588A342B6EE8680043D19E /* BloglyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD588A332B6EE8680043D19E /* BloglyUITests.swift */; };
+		AD588A362B6EE8680043D19E /* BloglyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD588A352B6EE8680043D19E /* BloglyUITestsLaunchTests.swift */; };
+		AD588A462B6EF8510043D19E /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = AD588A452B6EF8510043D19E /* FeedKit */; };
+		AD588A482B6EFC460043D19E /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD588A472B6EFC460043D19E /* Blog.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD588A262B6EE8680043D19E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD588A0A2B6EE8670043D19E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD588A112B6EE8670043D19E;
+			remoteInfo = Blogly;
+		};
+		AD588A302B6EE8680043D19E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD588A0A2B6EE8670043D19E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD588A112B6EE8670043D19E;
+			remoteInfo = Blogly;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD588A122B6EE8670043D19E /* Blogly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blogly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD588A152B6EE8670043D19E /* BloglyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloglyApp.swift; sourceTree = "<group>"; };
+		AD588A172B6EE8670043D19E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD588A192B6EE8670043D19E /* RSSFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeed.swift; sourceTree = "<group>"; };
+		AD588A1B2B6EE8680043D19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD588A1E2B6EE8680043D19E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AD588A202B6EE8680043D19E /* Blogly.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blogly.entitlements; sourceTree = "<group>"; };
+		AD588A252B6EE8680043D19E /* BloglyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloglyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD588A292B6EE8680043D19E /* BloglyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloglyTests.swift; sourceTree = "<group>"; };
+		AD588A2F2B6EE8680043D19E /* BloglyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloglyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD588A332B6EE8680043D19E /* BloglyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloglyUITests.swift; sourceTree = "<group>"; };
+		AD588A352B6EE8680043D19E /* BloglyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloglyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AD588A472B6EFC460043D19E /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD588A0F2B6EE8670043D19E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD588A462B6EF8510043D19E /* FeedKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD588A222B6EE8680043D19E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD588A2C2B6EE8680043D19E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD588A092B6EE8670043D19E = {
+			isa = PBXGroup;
+			children = (
+				AD588A142B6EE8670043D19E /* Blogly */,
+				AD588A282B6EE8680043D19E /* BloglyTests */,
+				AD588A322B6EE8680043D19E /* BloglyUITests */,
+				AD588A132B6EE8670043D19E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD588A132B6EE8670043D19E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD588A122B6EE8670043D19E /* Blogly.app */,
+				AD588A252B6EE8680043D19E /* BloglyTests.xctest */,
+				AD588A2F2B6EE8680043D19E /* BloglyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD588A142B6EE8670043D19E /* Blogly */ = {
+			isa = PBXGroup;
+			children = (
+				AD588A152B6EE8670043D19E /* BloglyApp.swift */,
+				AD588A172B6EE8670043D19E /* ContentView.swift */,
+				AD588A192B6EE8670043D19E /* RSSFeed.swift */,
+				AD588A1B2B6EE8680043D19E /* Assets.xcassets */,
+				AD588A202B6EE8680043D19E /* Blogly.entitlements */,
+				AD588A1D2B6EE8680043D19E /* Preview Content */,
+				AD588A472B6EFC460043D19E /* Blog.swift */,
+			);
+			path = Blogly;
+			sourceTree = "<group>";
+		};
+		AD588A1D2B6EE8680043D19E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AD588A1E2B6EE8680043D19E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD588A282B6EE8680043D19E /* BloglyTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD588A292B6EE8680043D19E /* BloglyTests.swift */,
+			);
+			path = BloglyTests;
+			sourceTree = "<group>";
+		};
+		AD588A322B6EE8680043D19E /* BloglyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AD588A332B6EE8680043D19E /* BloglyUITests.swift */,
+				AD588A352B6EE8680043D19E /* BloglyUITestsLaunchTests.swift */,
+			);
+			path = BloglyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD588A112B6EE8670043D19E /* Blogly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD588A392B6EE8680043D19E /* Build configuration list for PBXNativeTarget "Blogly" */;
+			buildPhases = (
+				AD588A0E2B6EE8670043D19E /* Sources */,
+				AD588A0F2B6EE8670043D19E /* Frameworks */,
+				AD588A102B6EE8670043D19E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blogly;
+			packageProductDependencies = (
+				AD588A452B6EF8510043D19E /* FeedKit */,
+			);
+			productName = Blogly;
+			productReference = AD588A122B6EE8670043D19E /* Blogly.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD588A242B6EE8680043D19E /* BloglyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD588A3C2B6EE8680043D19E /* Build configuration list for PBXNativeTarget "BloglyTests" */;
+			buildPhases = (
+				AD588A212B6EE8680043D19E /* Sources */,
+				AD588A222B6EE8680043D19E /* Frameworks */,
+				AD588A232B6EE8680043D19E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD588A272B6EE8680043D19E /* PBXTargetDependency */,
+			);
+			name = BloglyTests;
+			productName = BloglyTests;
+			productReference = AD588A252B6EE8680043D19E /* BloglyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD588A2E2B6EE8680043D19E /* BloglyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD588A3F2B6EE8680043D19E /* Build configuration list for PBXNativeTarget "BloglyUITests" */;
+			buildPhases = (
+				AD588A2B2B6EE8680043D19E /* Sources */,
+				AD588A2C2B6EE8680043D19E /* Frameworks */,
+				AD588A2D2B6EE8680043D19E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD588A312B6EE8680043D19E /* PBXTargetDependency */,
+			);
+			name = BloglyUITests;
+			productName = BloglyUITests;
+			productReference = AD588A2F2B6EE8680043D19E /* BloglyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD588A0A2B6EE8670043D19E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AD588A112B6EE8670043D19E = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					AD588A242B6EE8680043D19E = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = AD588A112B6EE8670043D19E;
+					};
+					AD588A2E2B6EE8680043D19E = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = AD588A112B6EE8670043D19E;
+					};
+				};
+			};
+			buildConfigurationList = AD588A0D2B6EE8670043D19E /* Build configuration list for PBXProject "Blogly" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD588A092B6EE8670043D19E;
+			packageReferences = (
+				AD588A442B6EF8510043D19E /* XCRemoteSwiftPackageReference "FeedKit" */,
+			);
+			productRefGroup = AD588A132B6EE8670043D19E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD588A112B6EE8670043D19E /* Blogly */,
+				AD588A242B6EE8680043D19E /* BloglyTests */,
+				AD588A2E2B6EE8680043D19E /* BloglyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD588A102B6EE8670043D19E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD588A1F2B6EE8680043D19E /* Preview Assets.xcassets in Resources */,
+				AD588A1C2B6EE8680043D19E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD588A232B6EE8680043D19E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD588A2D2B6EE8680043D19E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD588A0E2B6EE8670043D19E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD588A182B6EE8670043D19E /* ContentView.swift in Sources */,
+				AD588A482B6EFC460043D19E /* Blog.swift in Sources */,
+				AD588A1A2B6EE8670043D19E /* RSSFeed.swift in Sources */,
+				AD588A162B6EE8670043D19E /* BloglyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD588A212B6EE8680043D19E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD588A2A2B6EE8680043D19E /* BloglyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD588A2B2B6EE8680043D19E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD588A342B6EE8680043D19E /* BloglyUITests.swift in Sources */,
+				AD588A362B6EE8680043D19E /* BloglyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD588A272B6EE8680043D19E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD588A112B6EE8670043D19E /* Blogly */;
+			targetProxy = AD588A262B6EE8680043D19E /* PBXContainerItemProxy */;
+		};
+		AD588A312B6EE8680043D19E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD588A112B6EE8670043D19E /* Blogly */;
+			targetProxy = AD588A302B6EE8680043D19E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AD588A372B6EE8680043D19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD588A382B6EE8680043D19E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		AD588A3A2B6EE8680043D19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Blogly/Blogly.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Blogly/Preview Content\"";
+				DEVELOPMENT_TEAM = TY26CSL493;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tbwright.Blogly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD588A3B2B6EE8680043D19E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Blogly/Blogly.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Blogly/Preview Content\"";
+				DEVELOPMENT_TEAM = TY26CSL493;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tbwright.Blogly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD588A3D2B6EE8680043D19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TY26CSL493;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tbwright.BloglyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blogly.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Blogly";
+			};
+			name = Debug;
+		};
+		AD588A3E2B6EE8680043D19E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TY26CSL493;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tbwright.BloglyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blogly.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Blogly";
+			};
+			name = Release;
+		};
+		AD588A402B6EE8680043D19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TY26CSL493;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tbwright.BloglyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Blogly;
+			};
+			name = Debug;
+		};
+		AD588A412B6EE8680043D19E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TY26CSL493;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tbwright.BloglyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Blogly;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD588A0D2B6EE8670043D19E /* Build configuration list for PBXProject "Blogly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD588A372B6EE8680043D19E /* Debug */,
+				AD588A382B6EE8680043D19E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD588A392B6EE8680043D19E /* Build configuration list for PBXNativeTarget "Blogly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD588A3A2B6EE8680043D19E /* Debug */,
+				AD588A3B2B6EE8680043D19E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD588A3C2B6EE8680043D19E /* Build configuration list for PBXNativeTarget "BloglyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD588A3D2B6EE8680043D19E /* Debug */,
+				AD588A3E2B6EE8680043D19E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD588A3F2B6EE8680043D19E /* Build configuration list for PBXNativeTarget "BloglyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD588A402B6EE8680043D19E /* Debug */,
+				AD588A412B6EE8680043D19E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD588A442B6EF8510043D19E /* XCRemoteSwiftPackageReference "FeedKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nmdias/FeedKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD588A452B6EF8510043D19E /* FeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD588A442B6EF8510043D19E /* XCRemoteSwiftPackageReference "FeedKit" */;
+			productName = FeedKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AD588A0A2B6EE8670043D19E /* Project object */;
+}
