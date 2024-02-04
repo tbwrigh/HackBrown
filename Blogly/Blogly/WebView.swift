@@ -27,6 +27,7 @@ struct WebView: NSViewRepresentable {
 struct WebViewWithToolbar: View {
     var url: URL?
     var rssFeed: String
+    var searchTerm: String?
 
     @State private var navigateBack = false
     @State private var liked = false
@@ -43,6 +44,8 @@ struct WebViewWithToolbar: View {
                 NavigationLink(destination: LikedPosts(), isActive: $navigateBack) { EmptyView() }
             }else if rssFeed == "ALL" {
                 NavigationLink(destination: AllPosts(), isActive: $navigateBack) { EmptyView() }
+            }else if rssFeed == "SEARCH" {
+                NavigationLink(destination: Search(searchTerm: searchTerm), isActive: $navigateBack) { EmptyView() }
             }else {
                 NavigationLink(destination: Blog(rssFeedURL: rssFeed), isActive: $navigateBack) { EmptyView() }
             }

@@ -10,13 +10,8 @@ import FeedKit
 import SwiftData
 
 struct Search: View {
-//
-//    var body: some View {
-//        GeometryReader { geometry in
-//            TextField("Search", text: $searchString)
-//        }
-//    }
-//    
+    var searchTerm: String?
+
     private struct PostRSSFeedItem {
         var rssFeedItem: RSSFeedItem
         var rssURL: String
@@ -40,7 +35,7 @@ struct Search: View {
                             filterFeed = search(feedItems: feedItems, searchString: searchString)
                         }
                     List(filterFeed, id: \.rssFeedItem.title) { item in
-                        NavigationLink(destination: WebViewWithToolbar(url: URL(string: item.rssFeedItem.link ?? "")!, rssFeed: item.rssURL)) {
+                        NavigationLink(destination: WebViewWithToolbar(url: URL(string: item.rssFeedItem.link ?? "")!, rssFeed: item.rssURL, searchTerm: searchString)) {
                             VStack(alignment: .leading) {
                                 Text(item.rssFeedItem.title ?? "Untitled").fontWeight(.bold)
                                     .frame(minWidth: geometry.size.width*0.95, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -55,6 +50,7 @@ struct Search: View {
                     }
                     .onAppear {
                         loadPosts()
+                        loadSearch()
                     }
                     .frame(minWidth: geometry.size.width, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                 }
@@ -107,7 +103,7 @@ struct Search: View {
                         continue
                     }
                         
-                    feedItems.append(PostRSSFeedItem(rssFeedItem: rssItem, rssURL: "ALL") )
+                    feedItems.append(PostRSSFeedItem(rssFeedItem: rssItem, rssURL: "SEARCH") )
                 }
             }
         case .failure(let error):
@@ -147,6 +143,16 @@ struct Search: View {
         return resultData
     }
     
+    func loadSearch() {
+        if (searchTerm ?? "").isEmpty {
+            return
+        }
+        
+        searchString = searchTerm ?? ""
+        
+        filterFeed = search(feedItems: feedItems, searchString: searchString)
+    }
+    
     private func search(feedItems: [PostRSSFeedItem], searchString: String) -> [PostRSSFeedItem] {
         if searchString.isEmpty {
             return feedItems
@@ -164,6 +170,8 @@ struct Search: View {
         
         return search_results
     }
+    
+    
 
 
 }

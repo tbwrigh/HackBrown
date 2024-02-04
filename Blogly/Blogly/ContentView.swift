@@ -23,7 +23,7 @@ struct ContentView: View {
     @State private var editingRSSFeedURL = ""
     
     @State private var selectedFeed: RSSFeed?
-    
+        
     var body: some View {
         NavigationSplitView {
             List {
