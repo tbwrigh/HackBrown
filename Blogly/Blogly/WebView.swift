@@ -41,6 +41,8 @@ struct WebViewWithToolbar: View {
             WebView(url: url)
             if rssFeed == "LIKED" {
                 NavigationLink(destination: LikedPosts(), isActive: $navigateBack) { EmptyView() }
+            }else if rssFeed == "ALL" {
+                NavigationLink(destination: AllPosts(), isActive: $navigateBack) { EmptyView() }
             }else {
                 NavigationLink(destination: Blog(rssFeedURL: rssFeed), isActive: $navigateBack) { EmptyView() }
             }

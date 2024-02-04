@@ -1,5 +1,5 @@
 //
-//  LikedPosts.swift
+//  AllPosts.swift
 //  Blogly
 //
 //  Created by tyler on 2/4/24.
@@ -9,17 +9,18 @@ import SwiftUI
 import FeedKit
 import SwiftData
 
-struct LikedPosts: View {
+struct AllPosts: View {
     
-    private struct LikedPostRSSFeedItem {
+    private struct PostRSSFeedItem {
         var rssFeedItem: RSSFeedItem
         var rssURL: String
     }
     
-    @State private var feedItems: [LikedPostRSSFeedItem] = []
+    @State private var feedItems: [PostRSSFeedItem] = []
     @State private var isLoading = false
     @Environment(\.presentationMode) var presentationMode
-    @Query private var likedArticles: [LikedArticle]
+    
+    @Query private var feeds: [RSSFeed]
     
     var body: some View {
         GeometryReader { geometry in
@@ -57,25 +58,27 @@ struct LikedPosts: View {
     }
     
     func loadPosts() {
-        var likedArticleURLS: Set<String> = []
-        var likedArticleRSSFeeds: Set<String> = []
-        for likedArticle in likedArticles {
-            likedArticleURLS.insert(likedArticle.articleURL)
-            likedArticleRSSFeeds.insert(likedArticle.rssURL)
-        }
+        
         
         isLoading = true
         
-        for rssFeed in likedArticleRSSFeeds {
-            parseRSSFeed(rssURL: rssFeed, likedUrls: likedArticleURLS)
+        for rssFeed in feeds {
+            print(rssFeed.url)
+            parseRSSFeed(rssURL: rssFeed.url)
         }
         
-        
-        
+        feedItems.sort { (item1, item2) -> Bool in
+            guard let date1 = item1.rssFeedItem.pubDate, let date2 = item2.rssFeedItem.pubDate else {
+                return false // Decide how you want to handle items without a pubDate
+            }
+            return date1 > date2
+        }
+
+
         isLoading = false
     }
     
-    func parseRSSFeed(rssURL: String, likedUrls: Set<String>) {
+    func parseRSSFeed(rssURL: String) {
         let data = fetchData(from: rssURL)!
         let parser = FeedParser(data: data)
         let result = parser.parse()
@@ -87,9 +90,7 @@ struct LikedPosts: View {
                         continue
                     }
                         
-                    if likedUrls.contains(rssItem.link ?? "") {
-                        feedItems.append(LikedPostRSSFeedItem(rssFeedItem: rssItem, rssURL: "LIKED") )
-                    }
+                    feedItems.append(PostRSSFeedItem(rssFeedItem: rssItem, rssURL: "ALL") )
                 }
             }
         case .failure(let error):

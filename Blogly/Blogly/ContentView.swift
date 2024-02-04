@@ -12,6 +12,8 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var feeds: [RSSFeed]
 
+    @State private var canEdit = false
+    
     @State private var showingAlert = false
     @State private var rssFeedName = ""
     @State private var rssFeedURL = ""
@@ -25,7 +27,17 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List {
-                NavigationLink(destination: LikedPosts()) {
+                NavigationLink(destination: AllPosts()
+                    .onAppear {canEdit = false}) {
+                    HStack {
+                        Text("All Posts")
+
+                        Image(systemName: "house.fill")
+                            .foregroundColor(.white)
+                    }
+                }
+                NavigationLink(destination: LikedPosts()
+                    .onAppear {canEdit = false}) {
                     HStack {
                         Text("Liked Posts")
 
@@ -36,6 +48,7 @@ struct ContentView: View {
                 Section(header: Text("Subscribed")) {
                     ForEach(feeds) { feed in
                         NavigationLink(destination: Blog(rssFeedURL: feed.url).onAppear {
+                            canEdit = true
                             selectedFeed = feed
                             print("Switch")
                         }) {
@@ -59,25 +72,29 @@ struct ContentView: View {
                     }
                 }
 
-                ToolbarItem {
-                    Button(
-                        action: {
-                            isEditing.toggle()
-                            editingRSSFeedURL = (selectedFeed?.url)!
-                            editingRSSFeedName = (selectedFeed?.name)!
+                if canEdit{
+                    ToolbarItem {
+                        Button(
+                            action: {
+                                isEditing.toggle()
+                                editingRSSFeedURL = (selectedFeed?.url)!
+                                editingRSSFeedName = (selectedFeed?.name)!
+                            }
+                        ) {
+                            Label(isEditing ? "Done" : "Edit", systemImage: isEditing ? "checkmark.circle" : "pencil.circle")
+                        }.alert("Edit RSS Feed", isPresented: $isEditing) {
+                            TextField("RSS Feed Name:", text: $editingRSSFeedName)
+                            TextField("RSS Feed URL:", text: $editingRSSFeedURL)
+                            Button("OK", action: editRSS)
                         }
-                    ) {
-                        Label(isEditing ? "Done" : "Edit", systemImage: isEditing ? "checkmark.circle" : "pencil.circle")
-                    }.alert("Edit RSS Feed", isPresented: $isEditing) {
-                        TextField("RSS Feed Name:", text: $editingRSSFeedName)
-                        TextField("RSS Feed URL:", text: $editingRSSFeedURL)
-                        Button("OK", action: editRSS)
+                        
                     }
-
                 }
             }
         } detail: {
-            Text("Select a Blog")
+            AllPosts().onAppear {
+                canEdit = false
+            }
         }
     }
     
