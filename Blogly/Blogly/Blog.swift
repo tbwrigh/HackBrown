@@ -14,12 +14,13 @@ struct Blog: View {
     
     @State private var feedItems: [RSSFeedItem] = []
     @State private var isLoading = false
-    
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         GeometryReader { geometry in
             NavigationView {
                 List(feedItems, id: \.title) { item in
-                    NavigationLink(destination: WebViewWithToolbar(url: URL(string: item.link ?? "")!)) {
+                    NavigationLink(destination: WebViewWithToolbar(url: URL(string: item.link ?? "")!, rssFeed: rssFeedURL)) {
                         VStack(alignment: .leading) {
                             Text(item.title ?? "Untitled").fontWeight(.bold)
                                 .frame(minWidth: geometry.size.width*0.95, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -36,6 +37,15 @@ struct Blog: View {
                     loadRSSFeed()
                 }
                 .frame(minWidth: geometry.size.width, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .primaryAction) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.left")
+                    }
+                }
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
         }

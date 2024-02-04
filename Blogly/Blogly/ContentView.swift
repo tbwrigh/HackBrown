@@ -26,19 +26,29 @@ struct ContentView: View {
         NavigationSplitView {
             List {
                 ForEach(feeds) { feed in
-                    NavigationLink {
-                        Blog(rssFeedURL: feed.url).onAppear {
-                            selectedFeed = feed
-                        }
-
-                    } label: {
+                    NavigationLink(destination: Blog(rssFeedURL: feed.url).onAppear {
+                        selectedFeed = feed
+                        print("Switch")
+                    }) {
                         Text(feed.name)
                     }
                 }
                 .onDelete(perform: deleteItems)
             }
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
+            .navigationSplitViewColumnWidth(min: 185, ideal: 205)
             .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        showingAlert.toggle()
+                    }) {
+                        Label("Add RSS", systemImage: "plus")
+                    }.alert("Add an RSS Feed", isPresented: $showingAlert) {
+                        TextField("RSS Feed Name:", text: $rssFeedName)
+                        TextField("RSS Feed URL:", text: $rssFeedURL)
+                        Button("OK", action: addRSS)
+                    }
+                }
+
                 ToolbarItem {
                     Button(
                         action: {
@@ -55,17 +65,6 @@ struct ContentView: View {
                     }
 
                 }
-                ToolbarItem {
-                    Button(action: {
-                        showingAlert.toggle()
-                    }) {
-                        Label("Add RSS", systemImage: "plus")
-                    }.alert("Add an RSS Feed", isPresented: $showingAlert) {
-                        TextField("RSS Feed Name:", text: $rssFeedName)
-                        TextField("RSS Feed URL:", text: $rssFeedURL)
-                        Button("OK", action: addRSS)
-                    }
-                }
             }
         } detail: {
             Text("Select a Blog")
@@ -76,9 +75,11 @@ struct ContentView: View {
         let newItem = RSSFeed(name: editingRSSFeedName, url: editingRSSFeedURL)
         modelContext.delete(selectedFeed!)
         if editingRSSFeedName.isEmpty {
+            print("empty")
             return
         }
         if editingRSSFeedURL.isEmpty {
+            print("empty")
             return
         }
         selectedFeed = newItem

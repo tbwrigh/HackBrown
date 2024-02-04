@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 final class RSSFeed {
+    let id: UUID = UUID()
     var url: String
     var name: String
     

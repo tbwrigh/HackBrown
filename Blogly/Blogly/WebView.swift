@@ -25,19 +25,24 @@ struct WebView: NSViewRepresentable {
 
 struct WebViewWithToolbar: View {
     var url: URL?
+    var rssFeed: String
+    @Environment(\.presentationMode) var presentationMode
+    @State private var navigateBack = false
     
     var body: some View {
         VStack {
             WebView(url: url)
+            NavigationLink(destination: Blog(rssFeedURL: rssFeed), isActive: $navigateBack) { EmptyView() }
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
                 Button(action: {
-                    // Your action for back navigation
+                    navigateBack.toggle()
                 }) {
                     Image(systemName: "chevron.left")
                 }
             }
         }
+        .navigationTitle("Reading Mode")
     }
 }
