@@ -25,15 +25,25 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(feeds) { feed in
-                    NavigationLink(destination: Blog(rssFeedURL: feed.url).onAppear {
-                        selectedFeed = feed
-                        print("Switch")
-                    }) {
-                        Text(feed.name)
+                NavigationLink(destination: LikedPosts()) {
+                    HStack {
+                        Text("Liked Posts")
+
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(.white)
                     }
                 }
-                .onDelete(perform: deleteItems)
+                Section(header: Text("Subscribed")) {
+                    ForEach(feeds) { feed in
+                        NavigationLink(destination: Blog(rssFeedURL: feed.url).onAppear {
+                            selectedFeed = feed
+                            print("Switch")
+                        }) {
+                            Text(feed.name)
+                        }
+                    }
+                    .onDelete(perform: deleteItems)
+                }
             }
             .navigationSplitViewColumnWidth(min: 185, ideal: 205)
             .toolbar {

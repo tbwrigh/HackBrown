@@ -18,6 +18,8 @@
 		AD588A462B6EF8510043D19E /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = AD588A452B6EF8510043D19E /* FeedKit */; };
 		AD588A482B6EFC460043D19E /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD588A472B6EFC460043D19E /* Blog.swift */; };
 		ADE01C242B6F2EE3003A3173 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE01C232B6F2EE3003A3173 /* WebView.swift */; };
+		ADE01C262B6FAA17003A3173 /* LikedArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE01C252B6FAA17003A3173 /* LikedArticle.swift */; };
+		ADE01C282B6FC867003A3173 /* LikedPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE01C272B6FC867003A3173 /* LikedPosts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		AD588A352B6EE8680043D19E /* BloglyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloglyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AD588A472B6EFC460043D19E /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
 		ADE01C232B6F2EE3003A3173 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		ADE01C252B6FAA17003A3173 /* LikedArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedArticle.swift; sourceTree = "<group>"; };
+		ADE01C272B6FC867003A3173 /* LikedPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPosts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				AD588A1D2B6EE8680043D19E /* Preview Content */,
 				AD588A472B6EFC460043D19E /* Blog.swift */,
 				ADE01C232B6F2EE3003A3173 /* WebView.swift */,
+				ADE01C252B6FAA17003A3173 /* LikedArticle.swift */,
+				ADE01C272B6FC867003A3173 /* LikedPosts.swift */,
 			);
 			path = Blogly;
 			sourceTree = "<group>";
@@ -278,8 +284,10 @@
 			files = (
 				AD588A182B6EE8670043D19E /* ContentView.swift in Sources */,
 				ADE01C242B6F2EE3003A3173 /* WebView.swift in Sources */,
+				ADE01C262B6FAA17003A3173 /* LikedArticle.swift in Sources */,
 				AD588A482B6EFC460043D19E /* Blog.swift in Sources */,
 				AD588A1A2B6EE8670043D19E /* RSSFeed.swift in Sources */,
+				ADE01C282B6FC867003A3173 /* LikedPosts.swift in Sources */,
 				AD588A162B6EE8670043D19E /* BloglyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@ struct BloglyApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             RSSFeed.self,
+            LikedArticle.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

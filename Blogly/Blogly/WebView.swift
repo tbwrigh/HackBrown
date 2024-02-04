@@ -1,6 +1,7 @@
 import SwiftUI
 import WebKit
 import AppKit
+import SwiftData
 
 // Define your WebView wrapper here
 struct WebView: NSViewRepresentable {
@@ -26,16 +27,50 @@ struct WebView: NSViewRepresentable {
 struct WebViewWithToolbar: View {
     var url: URL?
     var rssFeed: String
-    @Environment(\.presentationMode) var presentationMode
+
     @State private var navigateBack = false
+    @State private var liked = false
+    
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.modelContext) private var modelContext
+    @Query private var likedArticles: [LikedArticle]
+    
     
     var body: some View {
         VStack {
             WebView(url: url)
-            NavigationLink(destination: Blog(rssFeedURL: rssFeed), isActive: $navigateBack) { EmptyView() }
+            if rssFeed == "LIKED" {
+                NavigationLink(destination: LikedPosts(), isActive: $navigateBack) { EmptyView() }
+            }else {
+                NavigationLink(destination: Blog(rssFeedURL: rssFeed), isActive: $navigateBack) { EmptyView() }
+            }
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
+                Button(action: {
+                    let url_string = url?.absoluteString
+                    if !(url_string ?? "").isEmpty {
+                        if !liked{
+                            let likedArticle = LikedArticle(articleURL: url_string ?? "", rssURL: rssFeed)
+                            modelContext.insert(likedArticle)
+                            liked = true
+                            
+                        }else {
+                            for likedArticle in likedArticles {
+                                if likedArticle.articleURL == (url_string ?? "") {
+                                    modelContext.delete(likedArticle)
+                                }
+                                liked = false
+                            }
+                        }
+                    }
+                }) {
+                    if liked {
+                        Image(systemName: "heart.fill")
+                    }else {
+                        Image(systemName: "heart")
+                    }
+                }
                 Button(action: {
                     navigateBack.toggle()
                 }) {
@@ -44,5 +79,19 @@ struct WebViewWithToolbar: View {
             }
         }
         .navigationTitle("Reading Mode")
+        .onAppear(){
+            loadLiked()
+        }
+    }
+    
+    func loadLiked() {
+        let url_string = url?.absoluteString
+        for likedArticle in likedArticles {
+            if likedArticle.articleURL == url_string {
+                liked = true
+                break
+            }
+        }
+        
     }
 }
