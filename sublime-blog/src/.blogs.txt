@@ -1,0 +1,2 @@
+sumner rss-feed:https://sumnerevans.com/index.xml
+elijah rss-feed:https://elijahpotter.dev/rss.xml
